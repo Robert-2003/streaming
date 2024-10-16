@@ -7,6 +7,7 @@ import java.util.GregorianCalendar;
 
 public class Conteudo {
     
+    //atributos
     private Integer id;
     public String nome;
     public Integer avaliacao;
@@ -14,15 +15,17 @@ public class Conteudo {
     public Integer faixaEtaria;
     public Time duracao;
     public String Diretor;
-    public ArrayList<String> elenco;
+    public ArrayList<Elenco> elenco;
     public String sinopse;
     public String[] genero = {"Aventura", "Ação", "Terror", "Romance", "Comédia"};
     public ArrayList<Conteudo> recomedacao;
 
+    
+    //construtor vazio
     public Conteudo() {
     }
-
-    public Conteudo(Integer id, String nome, Integer avaliacao, GregorianCalendar dataLancamento, Integer faixaEtaria, Time duracao, String Diretor, ArrayList<String> elenco, String sinopse, String[] genero, ArrayList<Conteudo> recomedacao) {
+    //construtor cheio
+    public Conteudo(Integer id, String nome, Integer avaliacao, GregorianCalendar dataLancamento, Integer faixaEtaria, Time duracao, String Diretor, ArrayList<Elenco> elenco, String sinopse, ArrayList<Conteudo> recomedacao) {
         this.id = id;
         this.nome = nome;
         this.avaliacao = avaliacao;
@@ -32,10 +35,10 @@ public class Conteudo {
         this.Diretor = Diretor;
         this.elenco = elenco;
         this.sinopse = sinopse;
-        this.genero = genero;
         this.recomedacao = recomedacao;
     }
-
+    
+    //getters e setters
     public Integer getId() {
         return id;
     }
@@ -92,11 +95,11 @@ public class Conteudo {
         this.Diretor = Diretor;
     }
 
-    public ArrayList<String> getElenco() {
+    public ArrayList<Elenco> getElenco() {
         return elenco;
     }
 
-    public void setElenco(ArrayList<String> elenco) {
+    public void setElenco(ArrayList<Elenco> elenco) {
         this.elenco = elenco;
     }
 
@@ -120,14 +123,14 @@ public class Conteudo {
         return recomedacao;
     }
 
-    public void setRecomedacao(ArrayList<Conteudo> recomedacao) {
+    public void setRecomedacao(ArrayList<Conteudo> recomedacao) {    
         this.recomedacao = recomedacao;
     }
+
+    //toString
 
     @Override
     public String toString() {
         return "Conteudo{" + "id=" + id + ", nome=" + nome + ", avaliacao=" + avaliacao + ", dataLancamento=" + dataLancamento + ", faixaEtaria=" + faixaEtaria + ", duracao=" + duracao + ", Diretor=" + Diretor + ", elenco=" + elenco + ", sinopse=" + sinopse + ", genero=" + Arrays.toString(genero) + ", recomedacao=" + recomedacao + '}';
     }
-    
-    
 }
