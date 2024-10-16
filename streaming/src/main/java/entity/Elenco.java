@@ -5,7 +5,7 @@ import java.util.ArrayList;
 class Elenco {
     
     //atributos
-    private String nomeAtor;
+    public String nomeAtor;
 
     //construtor
     public Elenco(String nomeAtor) {

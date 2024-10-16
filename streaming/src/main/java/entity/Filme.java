@@ -1,6 +1,6 @@
 package entity;
 
-import java.sql.Time;
+import java.time.LocalTime;
 import java.util.ArrayList;
 
 public class Filme extends Conteudo {
@@ -11,7 +11,7 @@ public class Filme extends Conteudo {
 
     //construtor
 
-    public Filme(boolean posCredito, boolean franquia, Integer id, String nome, Integer avaliacao, String dataLancamento, Integer faixaEtaria, Time duracao, String Diretor, ArrayList<Elenco> elenco, String sinopse, ArrayList<Conteudo> recomedacao) {
+    public Filme(boolean posCredito, boolean franquia, Integer id, String nome, Integer avaliacao, String dataLancamento, Integer faixaEtaria, LocalTime duracao, String Diretor, ArrayList<Elenco> elenco, String sinopse, ArrayList<Conteudo> recomedacao) {
         super(id, nome, avaliacao, dataLancamento, faixaEtaria, duracao, Diretor, elenco, sinopse, recomedacao);
         this.posCredito = posCredito;
         this.franquia = franquia;

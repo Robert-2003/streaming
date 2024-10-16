@@ -1,8 +1,8 @@
 package entity;
 
-import java.sql.Time;
+
+import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.GregorianCalendar;
 
 public class Episodio extends Temporada {
 
@@ -10,11 +10,11 @@ public class Episodio extends Temporada {
     public String qualTemporada;
     public int nEpisodio;
     public String nomeEpisodio;
-    public Time introStart;
-    public Time introEnd;
+    public LocalTime introStart;
+    public LocalTime introEnd;
     
     //construtor
-    public Episodio(String qualTemporada, int nEpisodio, String nomeEpisodio, Time introStart, Time introEnd, int nTemporada, int quantEpisodios, ArrayList<Episodio> episodio, ArrayList<Temporada> temporada, int quantTemporadas, String duracaoSerie, Integer id, String nome, Integer avaliacao, String dataLancamento, Integer faixaEtaria, Time duracao, String Diretor, ArrayList<Elenco> elenco, String sinopse, ArrayList<Conteudo> recomedacao) {
+    public Episodio(String qualTemporada, int nEpisodio, String nomeEpisodio, LocalTime introStart, LocalTime introEnd, int nTemporada, int quantEpisodios, ArrayList<Episodio> episodio, ArrayList<Temporada> temporada, int quantTemporadas, String duracaoSerie, Integer id, String nome, Integer avaliacao, String dataLancamento, Integer faixaEtaria, LocalTime duracao, String Diretor, ArrayList<Elenco> elenco, String sinopse, ArrayList<Conteudo> recomedacao) {
         super(nTemporada, quantEpisodios, episodio, temporada, quantTemporadas, duracaoSerie, id, nome, avaliacao, dataLancamento, faixaEtaria, duracao, Diretor, elenco, sinopse, recomedacao);
         this.qualTemporada = qualTemporada;
         this.nEpisodio = nEpisodio;
@@ -49,19 +49,19 @@ public class Episodio extends Temporada {
         this.nomeEpisodio = nomeEpisodio;
     }
 
-    public Time getIntroStart() {
+    public LocalTime getIntroStart() {
         return introStart;
     }
 
-    public void setIntroStart(Time introStart) {
+    public void setIntroStart(LocalTime introStart) {
         this.introStart = introStart;
     }
 
-    public Time getIntroEnd() {
+    public LocalTime getIntroEnd() {
         return introEnd;
     }
 
-    public void setIntroEnd(Time introEnd) {
+    public void setIntroEnd(LocalTime introEnd) {
         this.introEnd = introEnd;
     }
     

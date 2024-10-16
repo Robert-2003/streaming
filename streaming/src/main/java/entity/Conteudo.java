@@ -1,6 +1,7 @@
 package entity;
 
-import java.sql.Time;
+import view.Time;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -12,7 +13,7 @@ public class Conteudo {
     public Integer avaliacao;
     public String dataLancamento;
     public Integer faixaEtaria;
-    public Time duracao;
+    public LocalTime duracao;
     public String Diretor;
     public ArrayList<Elenco> elenco;
     public String sinopse;
@@ -24,7 +25,7 @@ public class Conteudo {
     public Conteudo() {
     }
     //construtor cheio
-    public Conteudo(Integer id, String nome, Integer avaliacao, String dataLancamento, Integer faixaEtaria, Time duracao, String Diretor, ArrayList<Elenco> elenco, String sinopse, ArrayList<Conteudo> recomedacao) {
+    public Conteudo(Integer id, String nome, Integer avaliacao, String dataLancamento, Integer faixaEtaria, LocalTime duracao, String Diretor, ArrayList<Elenco> elenco, String sinopse, ArrayList<Conteudo> recomedacao) {
         this.id = id;
         this.nome = nome;
         this.avaliacao = avaliacao;
@@ -78,11 +79,11 @@ public class Conteudo {
         this.faixaEtaria = faixaEtaria;
     }
 
-    public Time getDuracao() {
+    public LocalTime getDuracao() {
         return duracao;
     }
 
-    public void setDuracao(Time duracao) {
+    public void setDuracao(LocalTime duracao) {
         this.duracao = duracao;
     }
 
