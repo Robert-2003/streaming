@@ -7,17 +7,16 @@ import java.util.GregorianCalendar;
 public class Episodio extends Temporada {
 
     //atributos
-    public int nTemporada;
+    public String qualTemporada;
     public int nEpisodio;
     public String nomeEpisodio;
     public Time introStart;
     public Time introEnd;
-
     
     //construtor
-    public Episodio(int nTemporada, int nEpisodio, String nomeEpisodio, Time introStart, Time introEnd, int numeroTemporada, int numeroEpisodios, ArrayList<Episodio> episodio, ArrayList<Temporada> temporada, String duracaoSerie, Integer id, String nome, Integer avaliacao, GregorianCalendar dataLancamento, Integer faixaEtaria, Time duracao, String Diretor, ArrayList<Elenco> elenco, String sinopse, ArrayList<Conteudo> recomedacao) {    
-        super(numeroTemporada, numeroEpisodios, episodio, temporada, duracaoSerie, id, nome, avaliacao, dataLancamento, faixaEtaria, duracao, Diretor, elenco, sinopse, recomedacao);
-        this.nTemporada = nTemporada;
+    public Episodio(String qualTemporada, int nEpisodio, String nomeEpisodio, Time introStart, Time introEnd, int nTemporada, int quantEpisodios, ArrayList<Episodio> episodio, ArrayList<Temporada> temporada, int quantTemporadas, String duracaoSerie, Integer id, String nome, Integer avaliacao, GregorianCalendar dataLancamento, Integer faixaEtaria, Time duracao, String Diretor, ArrayList<Elenco> elenco, String sinopse, ArrayList<Conteudo> recomedacao) {
+        super(nTemporada, quantEpisodios, episodio, temporada, quantTemporadas, duracaoSerie, id, nome, avaliacao, dataLancamento, faixaEtaria, duracao, Diretor, elenco, sinopse, recomedacao);
+        this.qualTemporada = qualTemporada;
         this.nEpisodio = nEpisodio;
         this.nomeEpisodio = nomeEpisodio;
         this.introStart = introStart;
@@ -25,12 +24,13 @@ public class Episodio extends Temporada {
     }
 
     //getters e setters
-    public int getnTemporada() {
-        return nTemporada;
+
+    public String getQualTemporada() {
+        return qualTemporada;
     }
 
-    public void setnTemporada(int nTemporada) {
-        this.nTemporada = nTemporada;
+    public void setQualTemporada(String qualTemporada) {
+        this.qualTemporada = qualTemporada;
     }
 
     public int getnEpisodio() {
@@ -66,8 +66,9 @@ public class Episodio extends Temporada {
     }
     
     //toString
+
     @Override
     public String toString() {
-        return "Episodio{" + "nTemporada=" + nTemporada + ", nEpisodio=" + nEpisodio + ", nomeEpisodio=" + nomeEpisodio + ", introStart=" + introStart + ", introEnd=" + introEnd + '}';
+        return "Episodio{" + "qualTemporada=" + qualTemporada + ", nEpisodio=" + nEpisodio + ", nomeEpisodio=" + nomeEpisodio + ", introStart=" + introStart + ", introEnd=" + introEnd + '}';
     }
 }
