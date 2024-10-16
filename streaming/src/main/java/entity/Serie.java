@@ -2,7 +2,6 @@ package entity;
 
 import java.sql.Time;
 import java.util.ArrayList;
-import java.util.GregorianCalendar;
 
 public class Serie extends Conteudo {
     
@@ -10,10 +9,9 @@ public class Serie extends Conteudo {
     private ArrayList<Temporada> temporada;
     public int quantTemporadas;
     public String duracaoSerie;
-
     
     //construtor
-    public Serie(ArrayList<Temporada> temporada, int quantTemporadas, String duracaoSerie, Integer id, String nome, Integer avaliacao, GregorianCalendar dataLancamento, Integer faixaEtaria, Time duracao, String Diretor, ArrayList<Elenco> elenco, String sinopse, ArrayList<Conteudo> recomedacao) {    
+    public Serie(ArrayList<Temporada> temporada, int quantTemporadas, String duracaoSerie, Integer id, String nome, Integer avaliacao, String dataLancamento, Integer faixaEtaria, Time duracao, String Diretor, ArrayList<Elenco> elenco, String sinopse, ArrayList<Conteudo> recomedacao) {    
         super(id, nome, avaliacao, dataLancamento, faixaEtaria, duracao, Diretor, elenco, sinopse, recomedacao);
         this.temporada = temporada;
         this.quantTemporadas = quantTemporadas;

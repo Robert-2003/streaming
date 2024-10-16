@@ -14,7 +14,7 @@ public class Episodio extends Temporada {
     public Time introEnd;
     
     //construtor
-    public Episodio(String qualTemporada, int nEpisodio, String nomeEpisodio, Time introStart, Time introEnd, int nTemporada, int quantEpisodios, ArrayList<Episodio> episodio, ArrayList<Temporada> temporada, int quantTemporadas, String duracaoSerie, Integer id, String nome, Integer avaliacao, GregorianCalendar dataLancamento, Integer faixaEtaria, Time duracao, String Diretor, ArrayList<Elenco> elenco, String sinopse, ArrayList<Conteudo> recomedacao) {
+    public Episodio(String qualTemporada, int nEpisodio, String nomeEpisodio, Time introStart, Time introEnd, int nTemporada, int quantEpisodios, ArrayList<Episodio> episodio, ArrayList<Temporada> temporada, int quantTemporadas, String duracaoSerie, Integer id, String nome, Integer avaliacao, String dataLancamento, Integer faixaEtaria, Time duracao, String Diretor, ArrayList<Elenco> elenco, String sinopse, ArrayList<Conteudo> recomedacao) {
         super(nTemporada, quantEpisodios, episodio, temporada, quantTemporadas, duracaoSerie, id, nome, avaliacao, dataLancamento, faixaEtaria, duracao, Diretor, elenco, sinopse, recomedacao);
         this.qualTemporada = qualTemporada;
         this.nEpisodio = nEpisodio;

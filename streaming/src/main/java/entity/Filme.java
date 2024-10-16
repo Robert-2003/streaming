@@ -2,7 +2,6 @@ package entity;
 
 import java.sql.Time;
 import java.util.ArrayList;
-import java.util.GregorianCalendar;
 
 public class Filme extends Conteudo {
     
@@ -11,7 +10,8 @@ public class Filme extends Conteudo {
     private boolean franquia;
 
     //construtor
-    public Filme(boolean posCredito, boolean franquia, Integer id, String nome, Integer avaliacao, GregorianCalendar dataLancamento, Integer faixaEtaria, Time duracao, String Diretor, ArrayList<Elenco> elenco, String sinopse, ArrayList<Conteudo> recomedacao) {
+
+    public Filme(boolean posCredito, boolean franquia, Integer id, String nome, Integer avaliacao, String dataLancamento, Integer faixaEtaria, Time duracao, String Diretor, ArrayList<Elenco> elenco, String sinopse, ArrayList<Conteudo> recomedacao) {
         super(id, nome, avaliacao, dataLancamento, faixaEtaria, duracao, Diretor, elenco, sinopse, recomedacao);
         this.posCredito = posCredito;
         this.franquia = franquia;

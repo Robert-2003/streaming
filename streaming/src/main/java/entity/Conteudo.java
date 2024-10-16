@@ -3,7 +3,6 @@ package entity;
 import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.GregorianCalendar;
 
 public class Conteudo {
     
@@ -11,7 +10,7 @@ public class Conteudo {
     private Integer id;
     public String nome;
     public Integer avaliacao;
-    public GregorianCalendar dataLancamento;
+    public String dataLancamento;
     public Integer faixaEtaria;
     public Time duracao;
     public String Diretor;
@@ -25,7 +24,7 @@ public class Conteudo {
     public Conteudo() {
     }
     //construtor cheio
-    public Conteudo(Integer id, String nome, Integer avaliacao, GregorianCalendar dataLancamento, Integer faixaEtaria, Time duracao, String Diretor, ArrayList<Elenco> elenco, String sinopse, ArrayList<Conteudo> recomedacao) {
+    public Conteudo(Integer id, String nome, Integer avaliacao, String dataLancamento, Integer faixaEtaria, Time duracao, String Diretor, ArrayList<Elenco> elenco, String sinopse, ArrayList<Conteudo> recomedacao) {
         this.id = id;
         this.nome = nome;
         this.avaliacao = avaliacao;
@@ -63,11 +62,11 @@ public class Conteudo {
         this.avaliacao = avaliacao;
     }
 
-    public GregorianCalendar getDataLancamento() {
+    public String getDataLancamento() {
         return dataLancamento;
     }
 
-    public void setDataLancamento(GregorianCalendar dataLancamento) {
+    public void setDataLancamento(String dataLancamento) {
         this.dataLancamento = dataLancamento;
     }
 
