@@ -13,15 +13,15 @@ public class Streaming {
 
         // Elenco
         ArrayList<Elenco> elencoFilme = new ArrayList<>();
-        elencoFilme.add(new Elenco("Ator Exemplo 1"));
-        elencoFilme.add(new Elenco("Ator Exemplo 2"));
+        elencoFilme.add(new Elenco("Will Smith"));
+        elencoFilme.add(new Elenco("Lady Gaga"));
 
         // Episódios
         ArrayList<Episodio> episodiosTemporada1 = new ArrayList<>();
         episodiosTemporada1.add(new Episodio(
             "Temporada 1", // qualTemporada
             1, // nEpisodio
-            "Episódio 1", // nomeEpisodio
+            "A Origem", // nomeEpisodio
             LocalTime.of(0, 1), // introStart
             LocalTime.of(0, 5), // introEnd
             1, // nTemporada
@@ -29,13 +29,13 @@ public class Streaming {
             episodiosTemporada1, // episodio
             new ArrayList<>(), // temporada
             "1h", // duracaoSerie
-            1, // id
-            "Série Exemplo", // nome
+            155862, // id
+            "Aternos", // nome
             10, // avaliacao
-            "2024-01-01", // dataLancamento
+            "12/11/2024", // dataLancamento
             14, // faixaEtaria
             LocalTime.of(1, 0), // duracao
-            "Diretor Exemplo", // Diretor
+            "Tarantino", // Diretor
             elencoFilme, // elenco
             "Sinopse do episódio", // sinopse
             new ArrayList<>() // recomendacao

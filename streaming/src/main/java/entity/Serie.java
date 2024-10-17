@@ -13,7 +13,7 @@ public class Serie extends Conteudo {
     public LocalTime fimIntro;
     
     //metodos
-    public Integer quantTempoadas() {
+    public Integer quantTemporadas() {
         return temporada.size();
     }
     
