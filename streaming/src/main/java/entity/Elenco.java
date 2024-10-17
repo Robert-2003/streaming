@@ -2,7 +2,7 @@ package entity;
 
 import java.util.ArrayList;
 
-class Elenco {
+public class Elenco {
     
     //atributos
     public String nomeAtor;

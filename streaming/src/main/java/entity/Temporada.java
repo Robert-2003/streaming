@@ -12,16 +12,22 @@ public class Temporada extends Serie {
     public ArrayList<Episodio> episodio;
 
     //construtor
-    public Temporada(int nTemporada, int quantEpisodios, ArrayList<Episodio> episodio, ArrayList<Temporada> temporada, int quantTemporadas, String duracaoSerie, Integer id, String nome, Integer avaliacao, String dataLancamento, Integer faixaEtaria, LocalTime duracao, String Diretor, ArrayList<Elenco> elenco, String sinopse, ArrayList<Conteudo> recomedacao) {
-        super(temporada, quantTemporadas, duracaoSerie, id, nome, avaliacao, dataLancamento, faixaEtaria, duracao, Diretor, elenco, sinopse, recomedacao);
+
+    public Temporada(int nTemporada, int quantEpisodios, ArrayList<Episodio> episodio, ArrayList<Temporada> temporada, String duracaoSerie, Integer id, String nome, Integer avaliacao, String dataLancamento, Integer faixaEtaria, LocalTime duracao, String Diretor, ArrayList<Elenco> elenco, String sinopse, ArrayList<Conteudo> recomedacao) {
+        super(temporada, duracaoSerie, id, nome, avaliacao, dataLancamento, faixaEtaria, duracao, Diretor, elenco, sinopse, recomedacao);
         this.nTemporada = nTemporada;
         this.quantEpisodios = quantEpisodios;
         this.episodio = episodio;
     }
     
     //métodos
-    public void addEpisodio(Episodio ep) {
-        episodio.add(ep);
+    public Episodio getEpisodio(int numeroEpisodio) {
+        if (numeroEpisodio >= 1 && numeroEpisodio <= episodio.size()) {
+            return episodio.get(numeroEpisodio - 1);
+        } else {
+            System.out.println("Episódio não encontrado.");
+            return null;
+        }
     }
     
     //getters e setters
@@ -50,7 +56,6 @@ public class Temporada extends Serie {
     }
     
     //toString
-
     @Override
     public String toString() {
         return "Temporada{" + "nTemporada=" + nTemporada + ", quantEpisodios=" + quantEpisodios + ", episodio=" + episodio + '}';

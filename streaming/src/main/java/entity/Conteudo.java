@@ -1,6 +1,6 @@
 package entity;
 
-import view.Time;
+import java.time.Duration;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,10 +20,31 @@ public class Conteudo {
     public String[] genero = {"Aventura", "Ação", "Terror", "Romance", "Comédia"};
     public ArrayList<Conteudo> recomedacao;
 
+    //metodos
+    public void assistir(LocalTime tempoAssistido) {
+        Duration duracaoTotal = Duration.ofHours(duracao.getHour()).plusMinutes(duracao.getMinute());
+        Duration tempoAssistidoTotal = Duration.ofHours(tempoAssistido.getHour()).plusMinutes(tempoAssistido.getMinute());
+        Duration tempoRestante = duracaoTotal.minus(tempoAssistidoTotal);
+
+        System.out.println("Duração total: " + duracao);
+        System.out.println("Tempo assistido: " + tempoAssistido);
+        System.out.println("Tempo restante: " + LocalTime.of(tempoRestante.toHoursPart(), tempoRestante.toMinutesPart()));
+    }
+    
+    public void pular(LocalTime inicioPular, LocalTime tempoPulo) {
+        Duration inicio = Duration.ofHours(inicioPular.getHour()).plusMinutes(inicioPular.getMinute());
+        Duration pulo = Duration.ofHours(tempoPulo.getHour()).plusMinutes(tempoPulo.getMinute());
+        Duration fim = inicio.plus(pulo);
+
+        System.out.println("Ínicio do ato: " + inicio);
+        System.out.println("Tempo de duração do ato: " + pulo);
+        System.out.println("Tempo restante depois: " + LocalTime.of(fim.toHoursPart(), fim.toMinutesPart()));
+    }
     
     //construtor vazio
     public Conteudo() {
     }
+    
     //construtor cheio
     public Conteudo(Integer id, String nome, Integer avaliacao, String dataLancamento, Integer faixaEtaria, LocalTime duracao, String Diretor, ArrayList<Elenco> elenco, String sinopse, ArrayList<Conteudo> recomedacao) {
         this.id = id;
