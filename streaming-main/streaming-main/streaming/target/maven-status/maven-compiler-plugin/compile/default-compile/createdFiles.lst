@@ -1,0 +1,7 @@
+entity\Conteudo.class
+com\mycompany\streaming\Streaming.class
+entity\Serie.class
+entity\Elenco.class
+entity\Filme.class
+entity\Episodio.class
+entity\Temporada.class
