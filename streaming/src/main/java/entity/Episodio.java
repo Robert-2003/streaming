@@ -27,6 +27,17 @@ public class Episodio extends Temporada {
         this.introEnd = introEnd;
     }
 
+    public void proxEpisodio(ArrayList<Episodio> episodios) {
+        // Verifica se há um próximo episódio disponível
+        int indiceAtual = nEpisodio - 1; // Como nEpisodio começa em 1, precisamos ajustar para índice zero.
+        if (indiceAtual >= 0 && indiceAtual < episodios.size() - 1) {
+            Episodio proximoEpisodio = episodios.get(indiceAtual + 1);
+            System.out.println("Indo para o próximo episódio: " + proximoEpisodio.getNomeEpisodio());
+        } else {
+            System.out.println("Este é o último episódio da temporada ou o episódio atual é inválido.");
+        }
+    }
+
     public void pularIntro() {
         if (introStart != null && introEnd != null) {
             System.out.println("Pulando introdução do episódio " + nomeEpisodio + "...");
