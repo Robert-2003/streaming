@@ -8,12 +8,15 @@ public class Serie extends Conteudo {
     
     //atributos
     private ArrayList<Temporada> temporada;
-    public Integer quantTemporadas = temporada.size();
     public String duracaoSerie;
     public LocalTime inicioIntro;
     public LocalTime fimIntro;
     
     //metodos
+    public Integer quantTempoadas() {
+        return temporada.size();
+    }
+    
     @Override
     public LocalTime getDuracao() {
         Duration duracaoSerie = Duration.ZERO;
@@ -63,14 +66,6 @@ public class Serie extends Conteudo {
         this.temporada = temporada;
     }
 
-    public Integer getQuantTemporadas() {
-        return quantTemporadas;
-    }
-
-    public void setQuantTemporadas(Integer quantTemporadas) {
-        this.quantTemporadas = quantTemporadas;
-    }
-
     public String getDuracaoSerie() {
         return duracaoSerie;
     }
@@ -80,9 +75,8 @@ public class Serie extends Conteudo {
     }
     
     //toString
-
     @Override
     public String toString() {
-        return "Serie{" + "temporada=" + temporada + ", quantTemporadas=" + quantTemporadas + ", duracaoSerie=" + duracaoSerie + '}';
+        return "Serie{" + "temporada=" + temporada + ", duracaoSerie=" + duracaoSerie + ", inicioIntro=" + inicioIntro + ", fimIntro=" + fimIntro + '}';
     }
 }

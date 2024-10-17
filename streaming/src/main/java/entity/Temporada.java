@@ -1,6 +1,5 @@
 package entity;
 
-import java.sql.Time;
 import java.time.LocalTime;
 import java.util.ArrayList;
 
@@ -12,12 +11,11 @@ public class Temporada extends Serie {
     public ArrayList<Episodio> episodio;
 
     //construtor
-
     public Temporada(int nTemporada, int quantEpisodios, ArrayList<Episodio> episodio, ArrayList<Temporada> temporada, String duracaoSerie, Integer id, String nome, Integer avaliacao, String dataLancamento, Integer faixaEtaria, LocalTime duracao, String Diretor, ArrayList<Elenco> elenco, String sinopse, ArrayList<Conteudo> recomedacao) {
         super(temporada, duracaoSerie, id, nome, avaliacao, dataLancamento, faixaEtaria, duracao, Diretor, elenco, sinopse, recomedacao);
         this.nTemporada = nTemporada;
-        this.quantEpisodios = quantEpisodios;
-        this.episodio = episodio;
+        this.quantEpisodios = episodio != null ? episodio.size() : 0;
+        this.episodio = episodio != null ? episodio : new ArrayList<>();
     }
     
     //métodos

@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class Conteudo {
     
     //atributos
-    private Integer id;
+    Integer id;
     public String nome;
     public Integer avaliacao;
     public String dataLancamento;
