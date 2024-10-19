@@ -50,7 +50,6 @@ public class Serie extends Conteudo {
     }
     
     //construtor
-
     public Serie(ArrayList<Temporada> temporada, String duracaoSerie, Integer id, String nome, Integer avaliacao, String dataLancamento, Integer faixaEtaria, LocalTime duracao, String Diretor, ArrayList<Elenco> elenco, String sinopse, ArrayList<Conteudo> recomedacao) {
         super(id, nome, avaliacao, dataLancamento, faixaEtaria, duracao, Diretor, elenco, sinopse, recomedacao);
         this.temporada = temporada;
@@ -73,7 +72,7 @@ public class Serie extends Conteudo {
     public void setDuracaoSerie(String duracaoSerie) {
         this.duracaoSerie = duracaoSerie;
     }
-    
+
     //toString
     @Override
     public String toString() {

@@ -2,6 +2,8 @@ package com.mycompany.streaming;
 
 import entity.Elenco;
 import entity.Episodio;
+import entity.Filme;
+import entity.Serie;
 import entity.Temporada;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -9,66 +11,70 @@ import java.util.ArrayList;
 public class Streaming {
 
     public static void main(String[] args) {
-        // Inicializando os objetos necessários
-
-        // Elenco
+        // Criar elenco
         ArrayList<Elenco> elencoFilme = new ArrayList<>();
-        elencoFilme.add(new Elenco("Will Smith"));
-        elencoFilme.add(new Elenco("Lady Gaga"));
+        elencoFilme.add(new Elenco("Ator 1"));
+        elencoFilme.add(new Elenco("Ator 2"));
 
-        // Episódios
-        ArrayList<Episodio> episodiosTemporada1 = new ArrayList<>();
-        episodiosTemporada1.add(new Episodio(
-            "Temporada 1", // qualTemporada
-            1, // nEpisodio
-            "A Origem", // nomeEpisodio
-            LocalTime.of(0, 1), // introStart
-            LocalTime.of(0, 5), // introEnd
-            1, // nTemporada
-            episodiosTemporada1.size(), // quantEpisodios
-            episodiosTemporada1, // episodio
-            new ArrayList<>(), // temporada
-            "1h", // duracaoSerie
-            155862, // id
-            "Aternos", // nome
-            10, // avaliacao
-            "12/11/2024", // dataLancamento
-            14, // faixaEtaria
-            LocalTime.of(1, 0), // duracao
-            "Tarantino", // Diretor
-            elencoFilme, // elenco
-            "Sinopse do episódio", // sinopse
-            new ArrayList<>() // recomendacao
-        ));
+        ArrayList<Elenco> elencoSerie = new ArrayList<>();
+        elencoSerie.add(new Elenco("Ator A"));
+        elencoSerie.add(new Elenco("Ator B"));
 
-        // Temporadas
-        ArrayList<Temporada> temporadas = new ArrayList<>();
-        Temporada temporada1 = new Temporada(
-            1, // nTemporada
-            episodiosTemporada1.size(), // quantEpisodios
-            episodiosTemporada1, // episodio
-            temporadas, // temporada
-            "1h", // duracaoSerie
+        // Criar filme
+        Filme filme = new Filme(
+            true, // posCredito
+            LocalTime.of(0, 5), // credito
+            false, // franquia
             1, // id
-            "Série Exemplo", // nome
-            10, // avaliacao
-            "2024-01-01", // dataLancamento
-            14, // faixaEtaria
-            LocalTime.of(1, 0), // duracao
-            "Diretor Exemplo", // Diretor
+            "A Aventura do Tempo", // nome
+            9, // avaliacao
+            "2023-10-01", // dataLancamento
+            10, // faixaEtaria
+            LocalTime.of(1, 30), // duracao
+            "Diretor Fantástico", // Diretor
             elencoFilme, // elenco
-            "Sinopse da temporada 1", // sinopse
+            "Um filme sobre viagens no tempo.", // sinopse
             new ArrayList<>() // recomendacao
         );
 
-        // Adicionando a temporada à lista
-        temporadas.add(temporada1);
+        // Criar episódios
+        ArrayList<Episodio> episodios = new ArrayList<>();
+        episodios.add(new Episodio("1", 1, "Episódio 1", LocalTime.of(0, 0), LocalTime.of(0, 5), 
+                1, 3, null, null, "0:30", 2, "Série de Aventura", 9, "2022-06-01", 10, 
+                LocalTime.of(0, 40), "Diretor Série", elencoSerie, "Sinopse da Série", new ArrayList<>()));
+        episodios.add(new Episodio("1", 2, "Episódio 2", LocalTime.of(0, 0), LocalTime.of(0, 5), 
+                1, 3, null, null, "0:30", 2, "Série de Aventura", 9, "2022-06-01", 10, 
+                LocalTime.of(0, 40), "Diretor Série", elencoSerie, "Sinopse da Série", new ArrayList<>()));
 
-        // Exibindo as informações
-        System.out.println(temporada1);
-        System.out.println("Episódios da temporada 1:");
-        for (Episodio ep : episodiosTemporada1) {
-            System.out.println(ep);
-        }
+        // Criar temporada
+        ArrayList<Temporada> temporadas = new ArrayList<>();
+        temporadas.add(new Temporada(1, 2, episodios, null, "0:30", 2, "Série de Aventura", 9, 
+                "2022-06-01", 10, LocalTime.of(0, 40), "Diretor Série", elencoSerie, "Sinopse da Série", new ArrayList<>()));
+
+        // Criar série
+        Serie serie = new Serie(temporadas, "0:30", 2, "Série de Aventura", 9, 
+        "2022-06-01", 10, LocalTime.of(0, 40), "Diretor Série", 
+        elencoSerie, "Sinopse da Série", new ArrayList<>());
+
+        // Exibir informações do filme e série
+        System.out.println("Filme: " + filme);
+        System.out.println("Série: " + serie);
+
+        // Usar métodos
+        filme.assistir(LocalTime.of(0, 30));
+        filme.pular(LocalTime.of(0, 5), LocalTime.of(0, 10));
+
+        // Exibir primeiro episódio
+        System.out.println("Exibindo informações do primeiro episódio:");
+        Episodio primeiroEpisodio = serie.getTemporada(1).getEpisodio(1);
+        System.out.println(primeiroEpisodio);
+
+        // Exibir segundo episódio
+        System.out.println("Exibindo informações do segundo episódio:");
+        Episodio segundoEpisodio = serie.getTemporada(1).getEpisodio(2);
+        System.out.println(segundoEpisodio);
+
+        // Pular a intro do primeiro episódio
+        primeiroEpisodio.pularIntro();
     }
 }
